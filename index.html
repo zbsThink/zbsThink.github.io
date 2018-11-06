@@ -313,7 +313,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/05/article-title/" itemprop="url">第一篇文章</a></h1>
+                <a class="post-title-link" href="/2018/11/05/article-title/" itemprop="url">markdown基本语法</a></h1>
         
 
         <div class="post-meta">
@@ -365,7 +365,7 @@
 
           
           
-             <span id="/2018/11/05/article-title/" class="leancloud_visitors" data-flag-title="第一篇文章">
+             <span id="/2018/11/05/article-title/" class="leancloud_visitors" data-flag-title="markdown基本语法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -398,8 +398,96 @@
       
         
           
-            <p>我们大家都是好样的</p>
-<p>你好，你吃了吗，你吃好了吗</p>
+            <h3 id="序言："><a href="#序言：" class="headerlink" title="序言："></a>序言：</h3><p>写一篇博客关于markdown的基本语法，方便现在学习和以后复习</p>
+<h3 id="起因："><a href="#起因：" class="headerlink" title="起因："></a>起因：</h3><p>现在的前端基本都用上了前端构建工具，那就难免要写一些readme等等的说明性文件<br>这样编写的文件一般都是.md文件，编写的语法自然跟其他格式的文件有所区别<br>本文是markdown文件的一个笔记，仅供学习和参考</p>
+<h3 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h3><ol>
+<li>标题的几种写法<br><strong>第一种</strong>：<h1 id="一级标题写法"><a href="#一级标题写法" class="headerlink" title="一级标题写法"></a>一级标题写法</h1><h2 id="二级标题写法"><a href="#二级标题写法" class="headerlink" title="二级标题写法"></a>二级标题写法</h2><h3 id="三级标题写法"><a href="#三级标题写法" class="headerlink" title="三级标题写法"></a>三级标题写法</h3><h4 id="四级标题写法"><a href="#四级标题写法" class="headerlink" title="四级标题写法"></a>四级标题写法</h4><h5 id="五级标题写法"><a href="#五级标题写法" class="headerlink" title="五级标题写法"></a>五级标题写法</h5><h6 id="六级标题写法"><a href="#六级标题写法" class="headerlink" title="六级标题写法"></a>六级标题写法</h6>####### 七级标题写法<br>前面带#号，后面带文字，分别表示h1-h6，上面可以看出，直到h6,而且h1下面会有一条横线，<br>注意： #号后面有空格<br><strong>第二种</strong>：<h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1>这是二级标题</li>
+</ol>
+<hr>
+<p>这种方式只能表示一级和二级标题，而且=和-的数量好像没有限制，只要大于一个就行<br><strong>第三种</strong>：</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>这种方式也可以表示h1-h6标题</p>
+<ol start="2">
+<li>列表的几种写法<br>我们都知道列表分为有序列表和无需列表，下面我们直接展示2种列表的写法<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3></li>
+</ol>
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+<ul>
+<li>1</li>
+<li>1</li>
+<li>1<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3></li>
+</ul>
+<ol>
+<li>list1</li>
+<li>list2</li>
+<li>list3<br>有序列表就相对简单一点，只有一种方式，注意，数字后面的点只能是英文的点，特别注意，有序列表的序号是根据第一行列表的序号根据第一行列表的数字顺序来的，比如说：<h3 id="有序列表-1"><a href="#有序列表-1" class="headerlink" title="有序列表"></a>有序列表</h3></li>
+<li>list1</li>
+<li>list2</li>
+<li>list3 </li>
+</ol>
+<hr>
+<ol start="3">
+<li>区块引用<h2 id="普通引用"><a href="#普通引用" class="headerlink" title="普通引用"></a>普通引用</h2></li>
+</ol>
+<ul>
+<li>不以结婚为目的的恋爱都是耍流氓<blockquote>
+<p>这是毛主席说的</p>
+</blockquote>
+</li>
+<li>前方高能<blockquote>
+<p>注意：这里是为了提醒有刺激的事情即将发生，请做好准备<br>引用的用法就是在语句前面加一个&gt;,注意是英文的那个右尖括号，注意空格<br>引用因为是一个区块，理论上是应该什么内容都可以放，比如说：标题，列表，引用等等，看下方实例</p>
+<h3 id="名人名言"><a href="#名人名言" class="headerlink" title="名人名言"></a>名人名言</h3><ul>
+<li>不以结婚为目的都是耍流氓<blockquote>
+<p>——毛主席</p>
+</blockquote>
+</li>
+<li>高举中国特色社会主义伟大旗帜<blockquote>
+<p>——习大大<br>上面的代码全部加上引用标签就变成了一个大的引用，引用里面还有引用</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="嵌套引用"><a href="#嵌套引用" class="headerlink" title="嵌套引用"></a>嵌套引用</h2><blockquote>
+<p>一级引用</p>
+<blockquote>
+<p>二级引用</p>
+<blockquote>
+<p>三级引用</p>
+<blockquote>
+<p>四级引用</p>
+<blockquote>
+<p>五级引用</p>
+<blockquote>
+<p>六级引用</p>
+<blockquote>
+<p>七级引用<br>上面可以看出，想要在上一次引用中嵌套一层引用，只需要多加一个&gt;,理论上可以无限嵌套，注意：多层嵌套&gt;是不需要<br>连续在一起，只要在一行就可以了，中间允许空格，但是为了好看，还是需要把排版搞好</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<ol start="4">
+<li>华丽的分割线</li>
+</ol>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<p>分隔线可以由* - _(星号，减号，下划线)这3个符号的至少3个符号表示，注意至少要3个，且需要连续，有空格也可以</p>
 
           
         
