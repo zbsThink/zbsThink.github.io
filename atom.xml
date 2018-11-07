@@ -38,24 +38,24 @@
   </entry>
   
   <entry>
-    <title>这是第二篇文章</title>
+    <title>给Hexo Next设置阅读全文</title>
     <link href="http://yoursite.com/2018/11/05/hello-world/"/>
     <id>http://yoursite.com/2018/11/05/hello-world/</id>
     <published>2018-11-05T07:05:53.431Z</published>
-    <updated>2018-11-05T10:27:06.612Z</updated>
+    <updated>2018-11-07T12:30:32.023Z</updated>
     
-    <content type="html"><![CDATA[<p>这是我写的第二篇文章<br>这里我也没写什么</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>最近使用Hexo搭建了自己的博客，并且使用了简洁但是强大的NexT主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接阅读全文来进入文章的详情页<br><a id="more"></a></p><h3 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h3><ol><li><p>在文章中使用&lt; !–more–&gt; 手动进行截断<br>这种方法可以根据文章的内容，自己在合适的位置添加 &lt; !–more–&gt; 标签，使用灵活，也是Hexo推荐的方法。</p></li><li><p>在文章中的front-matter中添加description，并提供文章摘录<br>这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。</p></li><li><p>自动形成摘要，在主题配置文件中添加<br>默认截取的长度为 150 字符，可以根据需要自行设定</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: false</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure></li></ol>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;这是我写的第二篇文章&lt;br&gt;这里我也没写什么&lt;/p&gt;
-
-      
+      &lt;h3 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h3&gt;&lt;p&gt;最近使用Hexo搭建了自己的博客，并且使用了简洁但是强大的NexT主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接阅读全文来进入文章的详情页&lt;br&gt;
     
     </summary>
     
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Next" scheme="http://yoursite.com/tags/Next/"/>
     
   </entry>
   
