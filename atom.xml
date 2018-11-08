@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-08T15:33:09.410Z</updated>
+  <updated>2018-11-08T15:57:50.722Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,17 +21,13 @@
     <link href="http://yoursite.com/2018/11/08/insertImage/"/>
     <id>http://yoursite.com/2018/11/08/insertImage/</id>
     <published>2018-11-08T15:07:40.000Z</published>
-    <updated>2018-11-08T15:33:09.410Z</updated>
+    <updated>2018-11-08T15:57:50.722Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/2018/11/08/insertImage/fool-dog.jpeg" alt="chan"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="向文章中添加图片"><a href="#向文章中添加图片" class="headerlink" title="向文章中添加图片"></a>向文章中添加图片</h3><p>使用官方的方式我觉的太麻烦，所以查找资料并结合本人的实践找到了以下的方法<br><a id="more"></a></p><ol><li>首先修改站点配置文件_config.yml中的post_asset_folder（随后你生成的draft或post都会附带一个与文章同名的目录）图片放在这个目录中就可以了<br><code>post_asset_folder: true</code></li><li>在hexo你的项目目录下（我的是myproject）执行npm install asset-image –save,这是下载安装一个上传本地图片的插件</li><li>稍等片刻hexo new post “title”生成md博文时，/source/_post文件夹里除了有:year/:month/:day:/title.md文件还有一个同名的文件夹</li><li><code>![这里输入图片描述](图片名.jpg)</code><br>下面来张傻狗图片镇楼<br><img src="/2018/11/08/insertImage/fool-dog.jpeg" alt="chan"></li></ol>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/2018/11/08/insertImage/fool-dog.jpeg&quot; alt=&quot;chan&quot;&gt;&lt;/p&gt;
-
-      
+      &lt;h3 id=&quot;向文章中添加图片&quot;&gt;&lt;a href=&quot;#向文章中添加图片&quot; class=&quot;headerlink&quot; title=&quot;向文章中添加图片&quot;&gt;&lt;/a&gt;向文章中添加图片&lt;/h3&gt;&lt;p&gt;使用官方的方式我觉的太麻烦，所以查找资料并结合本人的实践找到了以下的方法&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
