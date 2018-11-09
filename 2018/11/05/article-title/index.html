@@ -100,13 +100,21 @@
 <meta property="og:image" content="https://zbsthink.github.io/images/title-usage2.jpg">
 <meta property="og:image" content="https://zbsthink.github.io/images/disorder-list.jpg">
 <meta property="og:image" content="https://zbsthink.github.io/images/order-list.jpg">
+<meta property="og:image" content="https://zbsthink.github.io/images/order-list1.jpg">
 <meta property="og:image" content="https://zbsthink.github.io/images/reference-normal.jpg">
 <meta property="og:image" content="https://zbsthink.github.io/images/reference-nested.jpg">
 <meta property="og:image" content="https://zbsthink.github.io/images/reference-nested1.jpg">
 <meta property="og:image" content="https://zbsthink.github.io/images/dividing-line.jpg">
+<meta property="og:image" content="https://zbsthink.github.io/images/inline1.jpg">
+<meta property="og:image" content="https://zbsthink.github.io/images/inline2.jpg">
+<meta property="og:image" content="https://zbsthink.github.io/images/para.jpg">
 <meta property="og:image" content="https://zbsthink.github.io/images/photo1.jpg">
-<meta property="og:image" content="https://zbsthink.github.io/images/photo1.jpg">
-<meta property="og:updated_time" content="2018-11-08T15:18:04.231Z">
+<meta property="og:image" content="https://zbsthink.github.io/images/reference-image.jpg">
+<meta property="og:image" content="https://zbsthink.github.io/images/reference-image1.jpg">
+<meta property="og:image" content="https://zbsthink.github.io/images/single-code.jpg">
+<meta property="og:image" content="https://zbsthink.github.io/images/multiline.jpg">
+<meta property="og:image" content="https://zbsthink.github.io/images/table.jpg">
+<meta property="og:updated_time" content="2018-11-09T04:52:11.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="markdown基本语法">
 <meta name="twitter:description" content="序言：写一篇博客关于markdown的基本语法，方便现在学习和以后复习 起因：现在的前端基本都用上了前端构建工具，那就难免要写一些readme等等的说明性文件这样编写的文件一般都是.md文件，编写的语法自然跟其他格式的文件有所区别本文是markdown文件的一个笔记，仅供学习和参考">
@@ -450,7 +458,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k 字
+                  1.3k 字
                 </span>
               
 
@@ -519,7 +527,7 @@
 <li>list3<br><img src="https://zbsthink.github.io/images/order-list.jpg" alt="有序列表"><br>有序列表就相对简单一点，只有一种方式，注意，数字后面的点只能是英文的点，特别注意，有序列表的序号是根据第一行列表的序号根据第一行列表的数字顺序来的，比如说：<h3 id="有序列表-1"><a href="#有序列表-1" class="headerlink" title="有序列表"></a>有序列表</h3></li>
 <li>list1</li>
 <li>list2</li>
-<li>list3 </li>
+<li>list3<br><img src="https://zbsthink.github.io/images/order-list1.jpg" alt="有序列表1"></li>
 </ol>
 <hr>
 <ol start="3">
@@ -531,7 +539,12 @@
 </blockquote>
 </li>
 <li>前方高能<blockquote>
-<p>注意：这里是为了提醒有刺激的事情即将发生，请做好准备<br><img src="https://zbsthink.github.io/images/reference-normal.jpg" alt="普通引用"><br>引用的用法就是在语句前面加一个&gt;,注意是英文的那个右尖括号，注意空格<br>引用因为是一个区块，理论上是应该什么内容都可以放，比如说：标题，列表，引用等等，看下方实例</p>
+<p>注意：这里是为了提醒有刺激的事情即将发生，请做好准备<br><img src="https://zbsthink.github.io/images/reference-normal.jpg" alt="普通引用"></p>
+</blockquote>
+</li>
+</ul>
+<p>引用的用法就是在语句前面加一个&gt;,注意是英文的那个右尖括号，注意空格<br>引用因为是一个区块，理论上是应该什么内容都可以放，比如说：标题，列表，引用等等，看下方实例</p>
+<blockquote>
 <h3 id="名人名言"><a href="#名人名言" class="headerlink" title="名人名言"></a>名人名言</h3><ul>
 <li>不以结婚为目的都是耍流氓<blockquote>
 <p>——毛主席</p>
@@ -543,8 +556,6 @@
 </li>
 </ul>
 </blockquote>
-</li>
-</ul>
 <p><img src="https://zbsthink.github.io/images/reference-nested.jpg" alt="嵌套引用"><br>上面的代码全部加上引用标签就变成了一个大的引用，引用里面还有引用</p>
 <h2 id="嵌套引用"><a href="#嵌套引用" class="headerlink" title="嵌套引用"></a>嵌套引用</h2><blockquote>
 <p>一级引用</p>
@@ -580,24 +591,24 @@
 <hr>
 <p><img src="https://zbsthink.github.io/images/dividing-line.jpg" alt="分割线"><br>分隔线可以由* - _(星号，减号，下划线)这3个符号的至少3个符号表示，注意至少要3个，且需要连续，有空格也可以</p>
 <ol start="5">
-<li>链接<br>支持两种链接方式：行内式和参数式，不管是哪一种，链接文字都是用[方括号]来标记<h3 id="行内式"><a href="#行内式" class="headerlink" title="行内式"></a>行内式</h3><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">NexT使用文档</a><h3 id="列表链接"><a href="#列表链接" class="headerlink" title="列表链接"></a>列表链接</h3></li>
+<li>链接<br>支持两种链接方式：行内式和参数式，不管是哪一种，链接文字都是用[方括号]来标记<h3 id="行内式"><a href="#行内式" class="headerlink" title="行内式"></a>行内式</h3><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">NexT使用文档</a><br><img src="https://zbsthink.github.io/images/inline1.jpg" alt="行内式"><h3 id="列表链接"><a href="#列表链接" class="headerlink" title="列表链接"></a>列表链接</h3></li>
 </ol>
 <ul>
 <li><a href="https://www.baidu.com" title="参数1" target="_blank" rel="noopener">列表1</a></li>
-<li><a href="https://www.baidu.com" title="参数2" target="_blank" rel="noopener">列表2</a><h3 id="参数式"><a href="#参数式" class="headerlink" title="参数式"></a>参数式</h3></li>
+<li><a href="https://www.baidu.com" title="参数2" target="_blank" rel="noopener">列表2</a><br><img src="https://zbsthink.github.io/images/inline2.jpg" alt="列表链接"><h3 id="参数式"><a href="#参数式" class="headerlink" title="参数式"></a>参数式</h3></li>
 </ul>
-<p>这里是参数1<a href="https://www.baidu.com" title="参数1" target="_blank" rel="noopener">name</a>,这里是参数2<a href="https://www.baidu.com" title="参数2" target="_blank" rel="noopener">home</a><br>实际上就是把链接当作参数，适合多次使用链接的场景</p>
+<p>这里是参数1<a href="https://www.baidu.com" title="参数1" target="_blank" rel="noopener">name</a>,这里是参数2<a href="https://www.baidu.com" title="参数2" target="_blank" rel="noopener">home</a><br><img src="https://zbsthink.github.io/images/para.jpg" alt="参数式"><br>实际上就是把链接当作参数，适合多次使用链接的场景</p>
 <ol start="6">
-<li>图片<br>图片也有两种方式，行内式和参数式<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><strong>引用图片1</strong><br><img src="https://zbsthink.github.io/images/photo1.jpg" alt="photo1"><br><img src="https://zbsthink.github.io/images/photo1.jpg" alt="博客园"></li>
+<li><p>图片<br>图片也有两种方式，行内式和参数式</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p><strong>引用图片1</strong><br>1.行内式<br><img src="https://zbsthink.github.io/images/photo1.jpg" alt="photo1"><br><img src="https://zbsthink.github.io/images/reference-image.jpg" alt="引用图片"></p>
+<p><a href="https://zbsthink.github.io/images/photo1.jpg" target="_blank" rel="noopener">博客园</a><br>参数式图片，这里是![博客园]<br><img src="https://zbsthink.github.io/images/reference-image1.jpg" alt="引用图片"><br>用法跟链接基本一样，唯一不同的是，图片前面要写上一个！</p>
+</li>
+<li>代码框<h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><code>&lt;p&gt;&lt;a href=&quot;#&quot;&gt;门前大树下&lt;/a&gt;&lt;/p&gt;</code><br><img src="https://zbsthink.github.io/images/single-code.jpg" alt="单行代码"><h3 id="多行代码"><a href="#多行代码" class="headerlink" title="多行代码"></a>多行代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&lt;a href=&quot;#&quot;&gt;门前大树下&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;a href=&quot;#&quot;&gt;门前大树下&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;a href=&quot;#&quot;&gt;门前大树下&lt;/a&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<p>参数式图片，这里是![博客园]<br>用法跟链接基本一样，唯一不同的是，图片前面要写上一个！</p>
-<ol start="7">
-<li><p>代码框</p>
-<h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><p><code>&lt;p&gt;&lt;a href=&quot;#&quot;&gt;门前大树下&lt;/a&gt;&lt;/p&gt;</code></p>
-<h3 id="多行代码"><a href="#多行代码" class="headerlink" title="多行代码"></a>多行代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&lt;a href=&quot;#&quot;&gt;门前大树下&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;a href=&quot;#&quot;&gt;门前大树下&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;a href=&quot;#&quot;&gt;门前大树下&lt;/a&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>表格</p>
-</li>
+<p><img src="https://zbsthink.github.io/images/multiline.jpg" alt="单行代码"></p>
+<ol start="8">
+<li>表格</li>
 </ol>
 <table>
 <thead>
@@ -664,7 +675,7 @@
 </tr>
 </tbody>
 </table>
-<p>上面有三种方式用来写表格，表格的格式不一定要对齐，但是为了好看对齐是最好的，第一种的分割线后面的冒号表示<br>对齐方式，写在左边表示左对齐，右边为右对齐，两边都写表示居中，但是缺点是表格外面没有边框包起来</p>
+<p><img src="https://zbsthink.github.io/images/table.jpg" alt="单行代码"><br>上面有三种方式用来写表格，表格的格式不一定要对齐，但是为了好看对齐是最好的，第一种的分割线后面的冒号表示<br>对齐方式，写在左边表示左对齐，右边为右对齐，两边都写表示居中，但是缺点是表格外面没有边框包起来</p>
 <ol start="9">
 <li>强调<h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><em>字体倾斜</em><br><em>字体倾斜</em><br><strong>字体加粗</strong><br><strong>字体加粗</strong><br>一个*号或者是一个下划线包起来，会转换为<em>倾斜，如果是2个，会转换为<strong>加粗<br>10.转义<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3></strong></em></li>
 </ol>
