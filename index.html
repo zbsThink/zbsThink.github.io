@@ -740,6 +740,246 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/learnGit/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zbsThink">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zbsThink'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/11/learnGit/" itemprop="url">浅谈Git</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-11T17:32:33+08:00">
+                2018-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/studyDiary/" itemprop="url" rel="index">
+                    <span itemprop="name">studyDiary</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/11/learnGit/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/learnGit/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/11/learnGit/" class="leancloud_visitors" data-flag-title="浅谈Git">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言（两个问题）"><a href="#前言（两个问题）" class="headerlink" title="前言（两个问题）"></a>前言（两个问题）</h3><h4 id="1-什么是版本控制？我为什么要关心它呢？"><a href="#1-什么是版本控制？我为什么要关心它呢？" class="headerlink" title="1.什么是版本控制？我为什么要关心它呢？"></a>1.什么是版本控制？我为什么要关心它呢？</h4><p><strong>版本控制是记录一个或者若干个文件内容变化，以便将来查阅特定版本修订状况的系统。我们不仅可以对软件源代码的文本文件制作版本管理，我们还可以对任何类型的文件进行版本控制</strong></p>
+<h4 id="2-采用版本控制有什么好处？"><a href="#2-采用版本控制有什么好处？" class="headerlink" title="2.采用版本控制有什么好处？"></a>2.采用版本控制有什么好处？</h4><ol>
+<li><strong>有了它你可以将某个文件回溯到之前的状态，甚至将整个项目都回退过去某个时间点的状态</strong>。</li>
+<li><strong>你可以比较文件的变化细节，查出最后是谁修改了那个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能的缺陷</strong></li>
+<li><strong>使用版本控制系统还意味着即使你把整个项目中的文件改的改删的删，你也可以照样轻松恢复到原先的样子，但是额外增加的工作量却是微乎其微</strong><br><em>github的名字源于Git，Git是一个分布式版本控制系统，让程序员团队能够协作开发项目，git帮助大家管理为项目所作的工作，避免一个人的修改影响其他人所做的修改。你在项目中实现一个新功能的时候，git将跟踪你对每个文件所作的修改，而git将记录项目，如果你犯了错，想撤销所做的修改，可以轻松的返回以前的任何可行状态：代码，项目参与者的信息，问题和bug报告等</em><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="1-配置"><a href="#1-配置" class="headerlink" title="1.配置"></a>1.配置</h4>Git跟踪谁修改了项目，哪怕参与项目的只有一个人，所以，Git需要知道你的用户名和电子邮件，你必须提供用户名，但可以使用虚构的电子邮件地址<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;username@example.com&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>注意git config命令的–global参数，用了这个参数，表示你对这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定不同的用户名和Email地址</strong></p>
+<h4 id="2-创建项目"><a href="#2-创建项目" class="headerlink" title="2.创建项目"></a>2.创建项目</h4><ol>
+<li>我们来创建一个要进行版本控制的项目（又称版本库）。在你的系统创建一个名为learngit的文件夹使用如下命令<br>mkdir learngit //创建文件learngit<br>cd learngit    //进入learngit文件夹里面<br>dir            //显示learngit存在目录</li>
+<li>我们进入一个文件管理系统，进入learngit文件夹中创建一个hello-world.html文件在里面写上<br>console.log(‘Hello World’)  //注意html5的格式还是要有的<h4 id="3-初始化仓库"><a href="#3-初始化仓库" class="headerlink" title="3.初始化仓库"></a>3.初始化仓库</h4>使用以下命令创建一个git仓库<br><code>git init</code><br>然后会出现提示信息提示你创建了一个空的git仓库<h4 id="4-进行其他操作前先检查下状态使用如下命令"><a href="#4-进行其他操作前先检查下状态使用如下命令" class="headerlink" title="4.进行其他操作前先检查下状态使用如下命令"></a>4.进行其他操作前先检查下状态使用如下命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">   (use &quot;git add &lt;file&gt;...&quot; to include in what will be commited)</span><br><span class="line">                hello_world.html</span><br><span class="line">    nothing added to commit but untracked files present </span><br><span class="line">    (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在git中分支是项目的一个版本，从这里的输出我们可以知道，我们位于分支的master</p>
+<p>我们每次查看项目的时候，输出都是我们位于分支master上，接下来的输出表明，我将进行项目的提交，提交时项目在特定时间的快照</p>
+<p>Git指出了项目中未被跟踪的文件，因为我们还没有告诉他要跟踪那些文件，接下来我们被告知没有任何东西添加到当前提交里面，我们需要将要跟踪的文件加入到仓库</p>
+<h4 id="5-将文件加入到仓库"><a href="#5-将文件加入到仓库" class="headerlink" title="5.将文件加入到仓库"></a>5.将文件加入到仓库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">/learngit(master)</span><br><span class="line">git status</span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">      (use &quot;git rm --cached &lt;file&gt;)</span><br><span class="line">          </span><br><span class="line">          new file: hello-world.html</span><br></pre></td></tr></table></figure>
+<p><code>git add .</code> <strong>将项目中未被跟踪的文件都加入到仓库中</strong>，它不提交这些文件，而是让git开始关注他们。现在我们检查这个项目的状态，发现Git找到了需要提交的文件的一些修改，标签new file 表示这些文件是新加入的</p>
+<h4 id="6-执行提交"><a href="#6-执行提交" class="headerlink" title="6.执行提交"></a>6.执行提交</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;Started project&quot;</span><br><span class="line">[master(root-commit) 5d6cecal] Started project</span><br><span class="line">  1 file changed, 1 insertion(+)</span><br><span class="line">  create mode 1006444 hello-world.html</span><br></pre></td></tr></table></figure>
+<p>我们在执行<code>git commit -m &quot;Started project&quot;</code> 的时候，<strong>是拍摄项目快照</strong> <code>-m</code><strong>是让Git接下来的消息记录到项目的历史纪录中</strong>，输出表明我们在分支master上，而且有一个文件被修改了 <code>-m</code><strong>后面输入的内容是本次提交的说明</strong>，可以输入任意内容，当然最好是有意义的，这样你就从历史记录中方便地找到改动记录</p>
+<h4 id="7-查看提交历史"><a href="#7-查看提交历史" class="headerlink" title="7.查看提交历史"></a>7.查看提交历史</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">commit 5dcfhfhfhhfhfhfhfhhffhhfhfhhfhfhfhfh</span><br><span class="line">(HEAD -&gt; master)</span><br><span class="line">Author: username&lt;xxxxx.example.com&gt;</span><br><span class="line">Date: Sat Dec 9 20:16:17 2017 +0800</span><br><span class="line"></span><br><span class="line">       Started project</span><br></pre></td></tr></table></figure>
+<p>‘git log’是<strong>git日志</strong>的意思<br>我们每次提交的时候，Git都会生成一个包好40字符的独一无二的引用ID，它记录提交是谁执行的，提交时间，以及提交的指定消息，但是不是任何情况下都需要所有这些信息，因此git提供一个选项，让我们能够打印提交历史条目的更简单版本<br><figure class="highlight plain"><figcaption><span>log --pretty</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fhhfhfhfhhfhd34hfhfh676hfrhffh(HEAD -&gt; master)</span><br><span class="line"> Started project</span><br></pre></td></tr></table></figure></p>
+<p> 标志 –pretty=oneline（指定显示一项重要的内容（提交的引用ID以及为提交记录的消息））</p>
+<h4 id="8-第二次提交"><a href="#8-第二次提交" class="headerlink" title="8.第二次提交"></a>8.第二次提交</h4><p> 为了显示版本控制的强大，我们需要对项目进行修改，并提交所做的修改，为此，我们在文件中再添加一行代码<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;Hello World&apos;)</span><br><span class="line">console.log(&quot;Hello git&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>如果我们查看项目的状态，将发现Git注意到了这个文件的变化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">On branch master</span><br><span class="line">Changes not staged for commit:</span><br><span class="line">    (use &quot;git add &lt;file&gt;...&quot; to update what will be commited)</span><br><span class="line">    (use &quot;git checkout--&lt;file&gt;...&quot; to discared changes in working directory)</span><br><span class="line">        modified : hello-world.html</span><br><span class="line">No changes added on commit (use &quot;git add&quot;and/or &quot;git commit -a&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>这个指出了我们当前所在的分支为master，其中做出修改的文件是hello-world.html,而且所做的修改还没有提交<br>接下来我们提交所做的修改，并且查看操作</p>
+<ul>
+<li><p>提交</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit -am &quot;Extrending greeting&quot;</span><br><span class="line">[master b4ee15d] Extrended greeting.</span><br><span class="line"> 1 file changed, 2 insertion(+), 1 deletiong(-)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit,working tree clen</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看提交历史中重要信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=oneling</span><br><span class="line">b4ee15dfhfhfhfhfhfhhfhfhfhfhfhhfhhfhfhfhfhfhryrytyfhfh(HEAD -&gt; master)</span><br><span class="line">   Extrending greeting</span><br><span class="line">5d6cecafhfheyedfdjafoefhoehvfhefheofheofhcncnahffhdefh Started project</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面的解释是：我们执行提交，并且执行git commit的时候制定了标志-am其中<code>-a</code>是让Git将仓库中所有修改了的文件都加入当前提交中（如果我们两次提交之间加入了新文件，我们执行<code>git add .</code>操作，将新文件加入到仓库中）标志<code>-m</code>让Git在提交历史中记录一条消息</p>
+<h4 id="9-撤销更改"><a href="#9-撤销更改" class="headerlink" title="9.撤销更改"></a>9.撤销更改</h4><ul>
+<li><code>git checkout .</code>放弃最后一次提交对这个文件所做所有操作，将项目恢复到最后一次提交的状态</li>
+<li><code>git checkout</code> 引用ID的前6个字符` 放弃最近所做的工作，回到指定的以前的提交</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+     
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/hello-world/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1181,7 +1421,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1305,7 +1545,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.8k字</span>
+  <span class="post-count">博客全站共4.6k字</span>
 </div>
 
         
