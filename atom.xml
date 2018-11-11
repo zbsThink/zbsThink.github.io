@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-11T14:49:24.653Z</updated>
+  <updated>2018-11-11T15:15:20.942Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>deepLearnGit</title>
+    <link href="http://yoursite.com/2018/11/11/deepLearnGit/"/>
+    <id>http://yoursite.com/2018/11/11/deepLearnGit/</id>
+    <published>2018-11-11T14:56:07.000Z</published>
+    <updated>2018-11-11T15:15:20.942Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="时光穿梭机-版本回退"><a href="#时光穿梭机-版本回退" class="headerlink" title="时光穿梭机-版本回退"></a>时光穿梭机-版本回退</h3><p><strong>你不断对文件进行修改，然后不断提交到版本库里（前提是你先后执行了<code>git add和git commit命令</code>）</strong></p><ol><li>在版本间进行穿梭：<br>HEAD指向的版本就是当前的版本，因此，Git允许我们在版本历史之间穿梭，使用命令</li><li>穿梭到历史版本：<br>使用<code>git log</code>或者<code>git log --pretty=oneline</code>（只会显示关键信息，比较简洁方便查看）可以查看提交历史（可以查看不同时间的版本和版本ID），以便确定要回退到哪个版本</li><li>重返未来<br>使用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;时光穿梭机-版本回退&quot;&gt;&lt;a href=&quot;#时光穿梭机-版本回退&quot; class=&quot;headerlink&quot; title=&quot;时光穿梭机-版本回退&quot;&gt;&lt;/a&gt;时光穿梭机-版本回退&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;你不断对文件进行修改，然后不断提交到版本库里（前提是你先后执
+      
+    
+    </summary>
+    
+      <category term="studyDiary" scheme="http://yoursite.com/categories/studyDiary/"/>
+    
+    
+      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>浅谈Git</title>
@@ -61,9 +86,9 @@
       <category term="studyDiary" scheme="http://yoursite.com/categories/studyDiary/"/>
     
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
       <category term="node" scheme="http://yoursite.com/tags/node/"/>
     
