@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="时光穿梭机-版本回退你不断对文件进行修改，然后不断提交到版本库里（前提是你先后执行了git add和git commit命令）  在版本间进行穿梭：HEAD指向的版本就是当前的版本，因此，Git允许我们在版本历史之间穿梭，使用命令 穿梭到历史版本：使用git log或者git log --pretty=oneline（只会显示关键信息，比较简洁方便查看）可以查看提交历史（可以查看不同时间的版本和版">
+<meta name="description" content="时光穿梭机-版本回退你不断对文件进行修改，然后不断提交到版本库里（前提是你先后执行了git add和git commit命令）  在版本间进行穿梭：HEAD指向的版本就是当前的版本，因此，Git允许我们在版本历史之间穿梭，使用命令git reset --hard commit_id 穿梭到历史版本：使用git log或者git log --pretty=oneline（只会显示关键信息，比较简洁方">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="deepLearnGit">
 <meta property="og:url" content="http://yoursite.com/2018/11/11/deepLearnGit/index.html">
 <meta property="og:site_name" content="zbsThink&#39;blog">
-<meta property="og:description" content="时光穿梭机-版本回退你不断对文件进行修改，然后不断提交到版本库里（前提是你先后执行了git add和git commit命令）  在版本间进行穿梭：HEAD指向的版本就是当前的版本，因此，Git允许我们在版本历史之间穿梭，使用命令 穿梭到历史版本：使用git log或者git log --pretty=oneline（只会显示关键信息，比较简洁方便查看）可以查看提交历史（可以查看不同时间的版本和版">
+<meta property="og:description" content="时光穿梭机-版本回退你不断对文件进行修改，然后不断提交到版本库里（前提是你先后执行了git add和git commit命令）  在版本间进行穿梭：HEAD指向的版本就是当前的版本，因此，Git允许我们在版本历史之间穿梭，使用命令git reset --hard commit_id 穿梭到历史版本：使用git log或者git log --pretty=oneline（只会显示关键信息，比较简洁方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-11T15:15:20.942Z">
+<meta property="og:updated_time" content="2018-11-12T11:40:54.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="deepLearnGit">
-<meta name="twitter:description" content="时光穿梭机-版本回退你不断对文件进行修改，然后不断提交到版本库里（前提是你先后执行了git add和git commit命令）  在版本间进行穿梭：HEAD指向的版本就是当前的版本，因此，Git允许我们在版本历史之间穿梭，使用命令 穿梭到历史版本：使用git log或者git log --pretty=oneline（只会显示关键信息，比较简洁方便查看）可以查看提交历史（可以查看不同时间的版本和版">
+<meta name="twitter:description" content="时光穿梭机-版本回退你不断对文件进行修改，然后不断提交到版本库里（前提是你先后执行了git add和git commit命令）  在版本间进行穿梭：HEAD指向的版本就是当前的版本，因此，Git允许我们在版本历史之间穿梭，使用命令git reset --hard commit_id 穿梭到历史版本：使用git log或者git log --pretty=oneline（只会显示关键信息，比较简洁方">
 
 
 
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  181 字
+                  196 字
                 </span>
               
 
@@ -478,8 +478,8 @@
       
         <h3 id="时光穿梭机-版本回退"><a href="#时光穿梭机-版本回退" class="headerlink" title="时光穿梭机-版本回退"></a>时光穿梭机-版本回退</h3><p><strong>你不断对文件进行修改，然后不断提交到版本库里（前提是你先后执行了<code>git add和git commit命令</code>）</strong></p>
 <ol>
-<li>在版本间进行穿梭：<br>HEAD指向的版本就是当前的版本，因此，Git允许我们在版本历史之间穿梭，使用命令</li>
-<li>穿梭到历史版本：<br>使用<code>git log</code>或者<code>git log --pretty=oneline</code>（只会显示关键信息，比较简洁方便查看）可以查看提交历史（可以查看不同时间的版本和版本ID），以便确定要回退到哪个版本</li>
+<li>在版本间进行穿梭：<br>HEAD指向的版本就是当前的版本，因此，Git允许我们在版本历史之间穿梭，使用命令<code>git reset --hard commit_id</code></li>
+<li>穿梭到历史版本：<br>使用<code>git log</code>或者<code>git log --pretty=oneline</code>（只会显示关键信息，比较简洁方便查看）可以查看提交历史（可以查看不同时间的版本和版本ID），以便确定要回退到哪个版本,然后使用命令1回退版本</li>
 <li>重返未来<br>使用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本</li>
 </ol>
 
@@ -535,6 +535,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/12/learnGithub/" rel="prev" title="关于Github的一些简易使用">
+                关于Github的一些简易使用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -623,7 +627,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -645,7 +649,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -763,7 +767,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.8k字</span>
+  <span class="post-count">博客全站共5.9k字</span>
 </div>
 
         
