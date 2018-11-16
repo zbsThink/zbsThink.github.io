@@ -1461,7 +1461,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  767 字
+                  1.5k 字
                 </span>
               
 
@@ -1477,7 +1477,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -1518,8 +1518,35 @@
 <ol>
 <li>在版本间进行穿梭：<br>HEAD指向的版本就是当前的版本，因此，Git允许我们在版本历史之间穿梭，使用命令<code>git reset --hard commit_id</code></li>
 <li>穿梭到历史版本：<br>使用<code>git log</code>或者<code>git log --pretty=oneline</code>（只会显示关键信息，比较简洁方便查看）可以查看提交历史（可以查看不同时间的版本和版本ID），以便确定要回退到哪个版本,然后使用命令1回退版本</li>
-<li>重返未来<br>使用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2>Git鼓励大量使用分支<br>查看分支：git branch(名字前面带*号表示当前分支)<br>创建分支：git branch <name><br>切换分支：git checkout <name><br>创建+切换分支： git checkout -b <name><br>合并某分支到当前分支 ： git merge <name><br>删除分支： git branch -d <name></name></name></name></name></name></li>
+<li>重返未来<br>使用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="创建合并分支"><a href="#创建合并分支" class="headerlink" title="创建合并分支"></a>创建合并分支</h3>Git鼓励大量使用分支<br>查看分支：git branch(名字前面带*号表示当前分支)<br>创建分支：git branch <name><br>切换分支：git checkout <name><br>创建+切换分支： git checkout -b <name><br>合并某分支到当前分支 ： git merge <name><br>删除分支： git branch -d <name><h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3></name></name></name></name></name></li>
 </ol>
+<ul>
+<li>当Git无法自动合并分支时，就必须首先解决冲突，解决冲突后，再提交，合并完成</li>
+<li>解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容再提交</li>
+<li>用<code>git log --graph</code>命令可以看到分支合并图<h3 id="分支策略"><a href="#分支策略" class="headerlink" title="分支策略"></a>分支策略</h3></li>
+<li>master分支是非常稳定的，也就是仅用来发布最新版本，平时不能在上面干活</li>
+<li>平时干活都应该在dev分支上，也就是说dev分支是不稳定的，在dev上干完活后确认dev分支无误后在把dev<br>分支合并到master上</li>
+<li>合并分支时加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能够看出来曾经做过合并<br>而fast forward合并就看不出来曾经做过合并<h3 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h3>当你在dev分支中开发自己的功能时你在提交前遇到了bug所以不能够提交如何做呢？</li>
+<li>首先你应该把当前的工作现场储藏起来使用如下命令<br><code>git stash</code></li>
+<li><p>首先你要先确定要在哪个分支上修复bug，假定要在master分支上修复，就从master创建临时分支例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master//切换到分支master</span><br><span class="line">git checkout -b issue-101//创建分支issue-101并且切换到分支issue-101</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后可以进文件中修复bug,并且执行以下操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br><span class="line">git commit -m &quot;fix bug lo1&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修复完成后，切换到master分支，并完成合并，最后删除issue-101分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge issue-101 --no-ff -m &quot;merged bug fix 101&quot;</span><br><span class="line">git branch -d issue-101</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接着回到dev干活</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用如下命令查看stash的目录列表<br><code>git stash list</code><br>工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法<br>第一个办法：<br><code>git stash apply</code>恢复工作现场，但是不删除stash内容，你需要用<code>git stash drop</code>来删除<br>当然你也可以多次stash，恢复的时候，先用<code>git stash list</code>查看，然后恢复指定的stash，用命令<br><code>git stash apply stash@{0}</code>(关于apply后面的参数可以通过<code>git stash list</code>查看并获取)<br>第二个办法：<br><code>git stash pop</code>恢复工作现场，同时删除stash内容<br>总结：</p>
+</li>
+<li>修复bug的时候，我们会通过创建新的bug分支进行修复，然后合并，最后删除</li>
+<li>当手头的工作没有完成的时候，先把工作现场<code>git stash</code>一下，然后去修复bug，修复后，再<code>git stash pop</code>，回到工作现场<h3 id="feature分支"><a href="#feature分支" class="headerlink" title="feature分支"></a>feature分支</h3></li>
+<li>开发一个新的feature（功能），最好新建一个分支如在dev上新建一个vulcan分支用于宇宙飞船项目</li>
+<li>如果要丢弃一个没有被合并过的分支，可以通过<code>git branch -D &lt;name&gt;</code>强行删除</li>
+</ul>
 
           
         
@@ -1934,7 +1961,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.5k字</span>
+  <span class="post-count">博客全站共7.3k字</span>
 </div>
 
         

@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="zbsThink&#39;blog">
 <meta property="og:description" content="Github简介Github是用于版本控制和协作的代码托管平台，它可以让您和其他人在任何地方协同工作，Gihub可以托管各种Git版本库，并提供一个web界面，但与其他像SourceForge或Google Code这样的服务不同，Github的独特卖点在于从另外一个项目进行分支的简易性">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-15T15:25:51.705Z">
+<meta property="og:updated_time" content="2018-11-16T13:34:36.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Github的一些简易使用">
 <meta name="twitter:description" content="Github简介Github是用于版本控制和协作的代码托管平台，它可以让您和其他人在任何地方协同工作，Gihub可以托管各种Git版本库，并提供一个web界面，但与其他像SourceForge或Google Code这样的服务不同，Github的独特卖点在于从另外一个项目进行分支的简易性">
@@ -481,7 +481,7 @@
 <h4 id="本地更新与远程更新的纠葛"><a href="#本地更新与远程更新的纠葛" class="headerlink" title="本地更新与远程更新的纠葛"></a>本地更新与远程更新的纠葛</h4><ol>
 <li><p>远程库更新-&gt;本地更新</p>
 <ul>
-<li>第一种方法：<code>get pull origin master</code>(这句话的意思是拉取origin远程仓库master分支并和本地的分支合并，同时更新本地分支)<br>语法： <code>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</code>(主机和仓库意思一样)意思是拉取远程仓库的远程分支并与本地分支进行合并，同时更新本地分支<br>例如：<code>git pull origin next:master</code>拉取远程origin仓库的next分支与本地的master分支进行合并，同时更新本地的分支。<br>描述：将远程存储库中的更改合并到当前分支中。在默认模式下，git pull是git fetch 后跟 git merge FETCH_HEAD的缩写，更准确的说是使用给定的参数运行git fetch，并调用git merge将检索到的分支头合并到当前分支中，使用–rebase，他运行git rebase 而不是git merge<br>*第二种方法<br>首先查看远程分支:<code>git remote -v</code><br>第一步：<code>git fetch origin master:temp</code>抓取origin远程仓库的master分支并将其代码下载到本地的temp分支<br>第二步：<code>git diff temp</code>比较本地仓库分支与下载的保存在本地的temp分支确认无误后进行第三步<br>第三步：<code>git merge temp</code>将本地仓库分支与下载的temp合并<br>第四步（非必需）<code>git branch -d temp</code></li>
+<li>第一种方法：<code>get pull origin master</code>(这句话的意思是拉取origin远程仓库master分支并和本地的分支合并，同时更新本地分支)<br>语法： <code>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</code>(主机和仓库意思一样)意思是拉取远程仓库的远程分支并与本地分支进行合并，同时更新本地分支<br>例如：<code>git pull origin next:master</code>拉取远程origin仓库的next分支与本地的master分支进行合并，同时更新本地的分支。<br>描述：将远程存储库中的更改合并到当前分支中。在默认模式下，git pull是git fetch 后跟 git merge FETCH_HEAD的缩写，更准确的说是使用给定的参数运行git fetch，并调用git merge将检索到的分支头合并到当前分支中，使用–rebase，他运行git rebase 而不是git merge<br>*第二种方法<br>首先查看远程分支:<code>git remote -v</code><br>第一步：<code>git fetch origin master:temp</code>抓取origin远程仓库的master分支并将其代码下载到本地的temp分支<br>第二步：<code>git diff temp</code>比较本地仓库分支与下载的保存在本地的temp分支确认无误后进行第三步<br>第三步：<code>git merge temp</code>将本地仓库分支与下载的temp合并<br>第四步（非必需）<code>git branch -d temp</code>也可以使用<code>git branch -D &lt;name&gt;</code>强制删除</li>
 </ul>
 </li>
 <li><p>本地更新-&gt;远程库更新<br>这里的本地有两种一种是自己创建的本地仓库然后进行关联远程github仓库，然后在提交本地修改的文件或者添加文件到本地库，最后推送本地修改的文件到远程github仓库</p>
@@ -790,7 +790,7 @@ git push命令用于将本地分支的更新推送到远程主机。它的格式
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.5k字</span>
+  <span class="post-count">博客全站共7.3k字</span>
 </div>
 
         
