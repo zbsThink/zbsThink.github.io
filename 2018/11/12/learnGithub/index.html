@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="zbsThink&#39;blog">
 <meta property="og:description" content="Github简介Github是用于版本控制和协作的代码托管平台，它可以让您和其他人在任何地方协同工作，Gihub可以托管各种Git版本库，并提供一个web界面，但与其他像SourceForge或Google Code这样的服务不同，Github的独特卖点在于从另外一个项目进行分支的简易性">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-16T13:34:36.795Z">
+<meta property="og:updated_time" content="2018-11-17T09:22:22.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Github的一些简易使用">
 <meta name="twitter:description" content="Github简介Github是用于版本控制和协作的代码托管平台，它可以让您和其他人在任何地方协同工作，Gihub可以托管各种Git版本库，并提供一个web界面，但与其他像SourceForge或Google Code这样的服务不同，Github的独特卖点在于从另外一个项目进行分支的简易性">
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k 字
+                  1.5k 字
                 </span>
               
 
@@ -455,7 +455,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -488,7 +488,8 @@
 </li>
 </ol>
 <ul>
-<li>第一种本地库（自己本地计算机上创建）<br>第一步：在github上创建一个仓库，并且记录下它的地址如<a href="https://www.exmple.com" target="_blank" rel="noopener">https://www.exmple.com</a><br>第二步：在自己电脑上创建一个文件夹如learnGithub，在里面添加文件如01.html<br>第三步：git操作<pre><code>第一步：`git init` (生成本地的git管理库)
+<li><p>第一种本地库（自己本地计算机上创建）<br>第一步：在github上创建一个仓库，并且记录下它的地址如<a href="https://www.exmple.com" target="_blank" rel="noopener">https://www.exmple.com</a><br>第二步：在自己电脑上创建一个文件夹如learnGithub，在里面添加文件如01.html<br>第三步：git操作</p>
+<pre><code>第一步：`git init` (生成本地的git管理库)
 第二步：`git add .`(将文件添加git管理库中并且添加追踪。如果只想添加某个特定的文件，只需要将.换成特定的名称即可)
 第三步：`git commit -m &quot;注释&quot;`举例：`git commit -m &apos;first commit&apos;`(提交暂存区并添加注释-m后面的就是注释)
 第四步：`git remote add origin https://自己仓库的url地址`（remote：远程，origin:远程仓库名，整个语句就是关联origin远程库）
@@ -500,7 +501,10 @@ git push命令用于将本地分支的更新推送到远程主机。它的格式
 第六步：进入github你所创建的仓库查看
 第七步：再次添加文件或者修改了使用`git push origin master`命令
 </code></pre><ul>
-<li>第二种本地库(自己从github上克隆下载到本地，然后在本地进行文件修改提交即可)<br> 实际测试有各种问题有待解决</li>
+<li><p>第二种本地库(自己从github上克隆下载到本地，然后在本地进行文件修改或者增加文件然后推送到(push)远程分支即可)-多人协作（在dev分支上进行开发，master主分支只保存最新的成熟的版本）<br> 第一步：首先你要先从远程仓库下载完整内容使用如下命令<br> <code>git clone http地址或者ssl地址</code><br> 第二步：你可以在你clone的目录中的文件进行修改或者添加新文件到相关分支如添加到dev分支<br> <code>git checkout -b dev origin/dev</code>//创建远程origin的dev分支到本地，并切换到本地dev分支<br> 第三步：将最新的更改添加提交后，push到远程的orign/dev使用如下命令</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br><span class="line">git commit -m &quot;注释语句&quot;</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+<p> 第四步：如果推送失败，这是因为远程分支比你的本地版本更新，需要先用<code>git pull</code>试图合并<br> 如果<code>git pull</code>失败，并提示<code>no tracking information</code>则说明本地分支和远程分支的链接关系没有创建，用命令<code>git branch --set-upstream-to=origin/dev dev</code>;如果<code>git pull &#39;成功了但是有冲突，那么就先解决冲突（删除相关语句或者重写相关语句）然后再</code>git commit -m ‘注释语句’<code>和</code>git push origin dev`多人协作就此完成</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -790,7 +794,7 @@ git push命令用于将本地分支的更新推送到远程主机。它的格式
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共7.3k字</span>
+  <span class="post-count">博客全站共8k字</span>
 </div>
 
         
@@ -1424,4 +1428,5 @@ git push命令用于将本地分支的更新推送到远程主机。它的格式
 
   
 
-<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+</body>
+</html>
