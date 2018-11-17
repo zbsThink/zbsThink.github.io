@@ -1833,7 +1833,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffffb9;
+  background: #ffc640;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3056,4 +3056,8 @@ pre {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
+}
+a {
+  background-color: #f40;
+  color: #fff;
 }
