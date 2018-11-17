@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="zbsThink&#39;blog">
 <meta property="og:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-17T07:17:39.845Z">
+<meta property="og:updated_time" content="2018-11-17T09:29:51.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="deepLearnGit">
 <meta name="twitter:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
@@ -529,7 +529,7 @@
 <li>feature分支是否推送到远程，取决于你是否和你的小伙伴合作在上面开发<br>协作过程：<br>多人协作时，大家都会往master和dev分支上推送各自的修改<br>第一步：<br><code>git clone http地址/ssl地址</code>值得注意的是从远程克隆时，默认情况下，你的小伙伴只能看到本地的master分支<br>第二步：<br>当你的小伙伴需要在dev分支上进行开发时，就必须创建远程origin的dev分支到本地使用如下命令<br><code>git checkout -b dev origin/dev</code><br>第三步：<br>现在，他就可以在dev上继续修改，然后，时不时地把dev分支push到远程具体使用如下命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br><span class="line">git commit -m &quot;add env&quot;</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>第四步：<br>如果推送失败说明远程分支比你的本地分支更新，需要先用<code>git pull</code>试图合并<br>如果<code>git pull</code>失败并提示<code>no tracking information</code>说明本地分支和远程分支的链接关系没有建立,使用如下命令<code>git branch --set-upstream-to=origin/dev dev</code><br>如果<code>git pull</code>成功合并但是有冲突，那么先解决冲突，并在本地提交<br>第五步：<br>没有冲突或者解决冲突后，再用git push origin <branch-name></branch-name></p>
+<p>第四步：<br>如果推送失败说明远程分支比你的本地分支更新，需要先用<code>git pull</code>试图合并<br>如果<code>git pull</code>失败并提示<code>no tracking information</code>说明本地分支和远程分支的链接关系没有建立,使用如下命令<code>git branch --set-upstream-to=origin/dev dev</code><br>如果<code>git pull</code>成功合并但是有冲突，那么先解决冲突，并在本地提交<br>第五步：<br>没有冲突或者解决冲突后，再用<code>git push origin &lt;branch-name&gt;</code></p>
 
       
     </div>
