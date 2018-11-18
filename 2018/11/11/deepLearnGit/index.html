@@ -97,7 +97,7 @@
 <meta property="og:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/11/11/deepLearnGit/01.jpg">
-<meta property="og:updated_time" content="2018-11-18T13:48:08.542Z">
+<meta property="og:updated_time" content="2018-11-18T14:38:41.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="deepLearnGit">
 <meta name="twitter:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.9k 字
+                  3.3k 字
                 </span>
               
 
@@ -457,7 +457,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  10 分钟
+                  12 分钟
                 </span>
               
             </div>
@@ -479,14 +479,38 @@
 
       
         <p>这里是我做的关于git学习的笔记，记的也比较详细<br><a id="more"></a></p>
-<h2 id="工作区、暂存区和版本库"><a href="#工作区、暂存区和版本库" class="headerlink" title="工作区、暂存区和版本库"></a>工作区、暂存区和版本库</h2><p>工作区：在电脑里面能看到的目录<br>版本库：在工作区又一个隐藏目录<code>.git</code>，是Git的版本库。Git的版本库中存了很多东西，其中最重要的就是称为stage（或者称为index）的暂存区，还有Git自动创建的master，以及指向master的指针HEAD<br><img src="/2018/11/11/deepLearnGit/01.jpg" alt="工作区，暂存区和版本库"><br>进一步解释一些命令：</p>
+<h2 id="Git介绍"><a href="#Git介绍" class="headerlink" title="Git介绍"></a>Git介绍</h2><ul>
+<li>Git是分布式版本控制系统</li>
+<li>集中式VS分布式，SVN VS Git<ol>
+<li>SVN和Git的主要区别在于历史版本维护的位置</li>
+<li>Git本地仓库包含代码还有历史库，在本地环境开发就可以记录历史，而SVN的历史库存于中央仓库，每次对比于提交代码都必须连接到中央仓库才能进行</li>
+<li>这样的好处在于<ul>
+<li>自己可以在脱机的情况下查看开发的历史版本</li>
+<li>多人开发时如果中央仓库Git仓库挂了，可以随时创建要给新的中央仓库然后就立刻恢复到了中央库<h2 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h2><h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;your name&quot;</span><br><span class="line">git config --global user.email &quot;your email&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p><code>git config</code>命令的<code>--global</code>参数，表明这台机器上的所有Git仓库都会使用这个配置，也可以对某个仓库指定不同的用户名和邮箱地址</p>
+<h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><h4 id="初始化一个Git仓库"><a href="#初始化一个Git仓库" class="headerlink" title="初始化一个Git仓库"></a>初始化一个Git仓库</h4><p><code>git init</code></p>
+<h4 id="添加文件到Git仓库"><a href="#添加文件到Git仓库" class="headerlink" title="添加文件到Git仓库"></a>添加文件到Git仓库</h4><p>包括两步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br><span class="line">git commit -m &quot;decription&quot;</span><br></pre></td></tr></table></figure></p>
+<p><code>git add</code>可以反复使用，添加多个文件，<code>git commit</code>可以一次性提交很多文件，<code>-m</code>后输入的时本次提交的说明，可以输入任意内容</p>
+<h4 id="查看工作区状态"><a href="#查看工作区状态" class="headerlink" title="查看工作区状态"></a>查看工作区状态</h4><p><code>git status</code></p>
+<h4 id="查看修改的内容"><a href="#查看修改的内容" class="headerlink" title="查看修改的内容"></a>查看修改的内容</h4><p>总共有三个分别是：<br><code>git diff</code></p>
+<p><code>git diff --cached</code></p>
+<p><code>git diff HEAD -- &lt;file&gt;</code></p>
 <ul>
+<li><code>git diff</code>可以查看工作区（work dict）和暂存区（stage）的区别</li>
+<li><code>git diff --cached</code> 可以查看暂存区（stage）和分支(master)的区别</li>
+<li><code>git diff HEAD -- &lt;file&gt;</code>可以查看工作区和版本库里面最新版本的区别<h2 id="工作区、暂存区和版本库"><a href="#工作区、暂存区和版本库" class="headerlink" title="工作区、暂存区和版本库"></a>工作区、暂存区和版本库</h2>工作区：在电脑里面能看到的目录<br>版本库：在工作区又一个隐藏目录<code>.git</code>，是Git的版本库。Git的版本库中存了很多东西，其中最重要的就是称为stage（或者称为index）的暂存区，还有Git自动创建的master，以及指向master的指针HEAD<br><img src="/2018/11/11/deepLearnGit/01.jpg" alt="工作区，暂存区和版本库"><br>进一步解释一些命令：<ul>
 <li><code>git add</code>实际上是把文件添加到暂存区</li>
 <li><code>git commit</code>实际上是把暂存区的所有内容提交到当前分支<h2 id="时光穿梭机"><a href="#时光穿梭机" class="headerlink" title="时光穿梭机"></a>时光穿梭机</h2><h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h3><h3 id="时光穿梭机-撤销修改"><a href="#时光穿梭机-撤销修改" class="headerlink" title="时光穿梭机-撤销修改"></a>时光穿梭机-撤销修改</h3>前提是你的文件以前使用过<code>git add &lt;file&gt;</code><h4 id="丢弃工作区的修改"><a href="#丢弃工作区的修改" class="headerlink" title="丢弃工作区的修改"></a>丢弃工作区的修改</h4><code>git checkout -- &lt;file&gt;</code><br>该命令是指文件在工作区的修改全部撤销，这里有两种情况:</li>
 </ul>
 <ol>
 <li>一种是flie自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</li>
-<li>一种时候file已经添加到暂存区，又做了修改，现在，撤销修改就是回到添加到暂存区后的状态<h4 id="丢弃暂存区的修改"><a href="#丢弃暂存区的修改" class="headerlink" title="丢弃暂存区的修改"></a>丢弃暂存区的修改</h4>分两步，第一步，把暂存区的修改撤销掉（unstage），重新放回工作区：<br><code>git reset HEAD &lt;file&gt;</code><br>第二步： 撤销工作区的修改<br><code>git checkout -- &lt;file&gt;</code><br>小结：<ol>
+<li>一种时候file已经添加到暂存区，又做了修改，现在，撤销修改就是回到添加到暂存区后的状态<h4 id="丢弃暂存区的修改"><a href="#丢弃暂存区的修改" class="headerlink" title="丢弃暂存区的修改"></a>丢弃暂存区的修改</h4>分两步，第一步，把暂存区的修改撤销掉（unstage），重新放回工作区：<br><code>git reset HEAD &lt;file&gt;</code><br>第二步： 撤销工作区的修改<br><code>git checkout -- &lt;file&gt;</code><br>小结：</li>
 <li>当你该乱了工作区某个文件的内容时，想直接丢弃工作区的修改时，用命令<code>git checkout -- &lt;file&gt;</code></li>
 <li>当你不但改乱了工作区的某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>,就回到了第一步，第二步按第一步操作</li>
 <li>当你不但把修改添加到了暂存区（<code>git add &lt;file&gt;</code>）还提交了不适合的修改到版本库时参照命令 <blockquote>
@@ -496,7 +520,7 @@
 </li>
 </ol>
 </li>
-</ol>
+</ul>
 <h4 id="进一步解释"><a href="#进一步解释" class="headerlink" title="进一步解释"></a>进一步解释</h4><p>Q:比如执行了<code>rm text.txt</code>误删了怎么办？A：执行<code>git checkout -- text.txt</code>把版本库的东西重新写回工作区就行了<br>Q:如果执行了<code>git rm text.txt</code>我们会发现工作区的text.txt文件也删除了，怎么恢复？A:先撤销暂存区的修改，重新放回工作区，然后再从版本库写会道工作区<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD text.txt</span><br><span class="line">git checkout -- text.txt</span><br></pre></td></tr></table></figure></p>
 <p>Q:如果真的想从版本库中删除文件怎么办？A:执行<code>git commit -m &quot;delete text.txt&quot;</code>,提交后最新的版本库将不包含这个文件<br>小结：</p>
 <ol>
@@ -786,7 +810,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作区、暂存区和版本库"><span class="nav-number">1.</span> <span class="nav-text">工作区、暂存区和版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时光穿梭机"><span class="nav-number">2.</span> <span class="nav-text">时光穿梭机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工作区和暂存区"><span class="nav-number">2.1.</span> <span class="nav-text">工作区和暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时光穿梭机-撤销修改"><span class="nav-number">2.2.</span> <span class="nav-text">时光穿梭机-撤销修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#丢弃工作区的修改"><span class="nav-number">2.2.1.</span> <span class="nav-text">丢弃工作区的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#丢弃暂存区的修改"><span class="nav-number">2.2.2.</span> <span class="nav-text">丢弃暂存区的修改</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时光穿梭机-删除文件"><span class="nav-number">2.3.</span> <span class="nav-text">时光穿梭机-删除文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进一步解释"><span class="nav-number">2.3.1.</span> <span class="nav-text">进一步解释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时光穿梭机-版本回退"><span class="nav-number">2.4.</span> <span class="nav-text">时光穿梭机-版本回退</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理"><span class="nav-number">3.</span> <span class="nav-text">分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建合并分支"><span class="nav-number">3.1.</span> <span class="nav-text">创建合并分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决冲突"><span class="nav-number">3.2.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支管理策略"><span class="nav-number">3.3.</span> <span class="nav-text">分支管理策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bug分支"><span class="nav-number">3.4.</span> <span class="nav-text">bug分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#feature分支"><span class="nav-number">3.5.</span> <span class="nav-text">feature分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多人协作"><span class="nav-number">3.6.</span> <span class="nav-text">多人协作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-rebase"><span class="nav-number">3.7.</span> <span class="nav-text">git rebase</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签管理"><span class="nav-number">4.</span> <span class="nav-text">标签管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建标签"><span class="nav-number">4.1.</span> <span class="nav-text">创建标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作标签"><span class="nav-number">4.2.</span> <span class="nav-text">操作标签</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git介绍"><span class="nav-number">1.</span> <span class="nav-text">Git介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git命令"><span class="nav-number">2.</span> <span class="nav-text">Git命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git配置"><span class="nav-number">2.1.</span> <span class="nav-text">Git配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建版本库"><span class="nav-number">2.2.</span> <span class="nav-text">创建版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化一个Git仓库"><span class="nav-number">2.2.1.</span> <span class="nav-text">初始化一个Git仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加文件到Git仓库"><span class="nav-number">2.2.2.</span> <span class="nav-text">添加文件到Git仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看工作区状态"><span class="nav-number">2.2.3.</span> <span class="nav-text">查看工作区状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看修改的内容"><span class="nav-number">2.2.4.</span> <span class="nav-text">查看修改的内容</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作区、暂存区和版本库"><span class="nav-number">3.</span> <span class="nav-text">工作区、暂存区和版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时光穿梭机"><span class="nav-number">4.</span> <span class="nav-text">时光穿梭机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工作区和暂存区"><span class="nav-number">4.1.</span> <span class="nav-text">工作区和暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时光穿梭机-撤销修改"><span class="nav-number">4.2.</span> <span class="nav-text">时光穿梭机-撤销修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#丢弃工作区的修改"><span class="nav-number">4.2.1.</span> <span class="nav-text">丢弃工作区的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#丢弃暂存区的修改"><span class="nav-number">4.2.2.</span> <span class="nav-text">丢弃暂存区的修改</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时光穿梭机-删除文件"><span class="nav-number">4.3.</span> <span class="nav-text">时光穿梭机-删除文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进一步解释"><span class="nav-number">4.3.1.</span> <span class="nav-text">进一步解释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时光穿梭机-版本回退"><span class="nav-number">4.4.</span> <span class="nav-text">时光穿梭机-版本回退</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理"><span class="nav-number">5.</span> <span class="nav-text">分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建合并分支"><span class="nav-number">5.1.</span> <span class="nav-text">创建合并分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决冲突"><span class="nav-number">5.2.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支管理策略"><span class="nav-number">5.3.</span> <span class="nav-text">分支管理策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bug分支"><span class="nav-number">5.4.</span> <span class="nav-text">bug分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#feature分支"><span class="nav-number">5.5.</span> <span class="nav-text">feature分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多人协作"><span class="nav-number">5.6.</span> <span class="nav-text">多人协作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-rebase"><span class="nav-number">5.7.</span> <span class="nav-text">git rebase</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签管理"><span class="nav-number">6.</span> <span class="nav-text">标签管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建标签"><span class="nav-number">6.1.</span> <span class="nav-text">创建标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作标签"><span class="nav-number">6.2.</span> <span class="nav-text">操作标签</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -842,7 +866,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.9k字</span>
+  <span class="post-count">博客全站共9.4k字</span>
 </div>
 
         
