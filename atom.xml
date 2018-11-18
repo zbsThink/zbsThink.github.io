@@ -34,9 +34,9 @@
       <category term="studyDiary" scheme="http://yoursite.com/categories/studyDiary/"/>
     
     
-      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
-    
       <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+    
+      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
     
   </entry>
   
