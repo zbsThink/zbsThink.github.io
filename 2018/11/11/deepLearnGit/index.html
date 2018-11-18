@@ -97,7 +97,7 @@
 <meta property="og:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/11/11/deepLearnGit/01.jpg">
-<meta property="og:updated_time" content="2018-11-18T13:38:38.226Z">
+<meta property="og:updated_time" content="2018-11-18T13:48:08.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="deepLearnGit">
 <meta name="twitter:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
@@ -487,7 +487,8 @@
 <ol>
 <li>一种是flie自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</li>
 <li>一种时候file已经添加到暂存区，又做了修改，现在，撤销修改就是回到添加到暂存区后的状态<h4 id="丢弃暂存区的修改"><a href="#丢弃暂存区的修改" class="headerlink" title="丢弃暂存区的修改"></a>丢弃暂存区的修改</h4>分两步，第一步，把暂存区的修改撤销掉（unstage），重新放回工作区：<br><code>git reset HEAD &lt;file&gt;</code><br>第二步： 撤销工作区的修改<br><code>git checkout -- &lt;file&gt;</code><br>小结：<ol>
-<li>当你该乱了工作区某个文件的内容时，想直接丢弃工作区的修改时，用命令<code>git checkout -- &lt;file&gt;</code><br>2.当你不但改乱了工作区的某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>,就回到了第一步，第二步按第一步操作</li>
+<li>当你该乱了工作区某个文件的内容时，想直接丢弃工作区的修改时，用命令<code>git checkout -- &lt;file&gt;</code></li>
+<li>当你不但改乱了工作区的某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>,就回到了第一步，第二步按第一步操作</li>
 <li>当你不但把修改添加到了暂存区（<code>git add &lt;file&gt;</code>）还提交了不适合的修改到版本库时参照命令 <blockquote>
 <p>时光穿梭机-版本回退</p>
 </blockquote>
