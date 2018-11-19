@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/11/11/deepLearnGit/</loc>
+    
+    <lastmod>2018-11-19T01:31:15.082Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/11/12/learnGithub/</loc>
     
     <lastmod>2018-11-19T01:24:06.196Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/2018/11/11/learnGit/</loc>
     
     <lastmod>2018-11-19T01:24:00.623Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/11/11/deepLearnGit/</loc>
-    
-    <lastmod>2018-11-19T01:23:55.251Z</lastmod>
     
   </url>
   

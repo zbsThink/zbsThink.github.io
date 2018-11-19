@@ -97,7 +97,7 @@
 <meta property="og:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/11/11/deepLearnGit/version.jpg">
-<meta property="og:updated_time" content="2018-11-19T01:23:55.251Z">
+<meta property="og:updated_time" content="2018-11-19T01:31:15.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="deepLearnGit">
 <meta name="twitter:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
@@ -483,10 +483,10 @@
 <li>Git是分布式版本控制系统</li>
 <li>集中式VS分布式，SVN VS Git<ol>
 <li>SVN和Git的主要区别在于历史版本维护的位置</li>
-<li>Git本地仓库包含代码还有历史库，在本地环境开发就可以记录历史，而SVN的历史库存于中央仓库，每次对比于提交代码都必须连接到中央仓库才能进行</li>
+<li>Git本地仓库包含代码库还有历史库，在本地环境开发就可以记录历史，而SVN的历史库存于中央仓库，每次对比于提交代码都必须连接到中央仓库才能进行</li>
 <li>这样的好处在于<ul>
 <li>自己可以在脱机的情况下查看开发的历史版本</li>
-<li>多人开发时如果中央仓库Git仓库挂了，可以随时创建要给新的中央仓库然后就立刻恢复到了中央库<h2 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h2><h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;your name&quot;</span><br><span class="line">git config --global user.email &quot;your email&quot;</span><br></pre></td></tr></table></figure>
+<li>多人开发时如果中央仓库Git仓库挂了，可以随时创建一个新的中央仓库然后就立刻恢复到了中央库<h2 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h2><h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;your name&quot;</span><br><span class="line">git config --global user.email &quot;your email&quot;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -496,7 +496,7 @@
 <p><code>git config</code>命令的<code>--global</code>参数，表明这台机器上的所有Git仓库都会使用这个配置，也可以对某个仓库指定不同的用户名和邮箱地址</p>
 <h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><h4 id="初始化一个Git仓库"><a href="#初始化一个Git仓库" class="headerlink" title="初始化一个Git仓库"></a>初始化一个Git仓库</h4><p><code>git init</code></p>
 <h4 id="添加文件到Git仓库"><a href="#添加文件到Git仓库" class="headerlink" title="添加文件到Git仓库"></a>添加文件到Git仓库</h4><p>包括两步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br><span class="line">git commit -m &quot;decription&quot;</span><br></pre></td></tr></table></figure></p>
-<p><code>git add</code>可以反复使用，添加多个文件，<code>git commit</code>可以一次性提交很多文件，<code>-m</code>后输入的时本次提交的说明，可以输入任意内容</p>
+<p><code>git add</code>可以反复使用，添加多个文件，<code>git commit</code>可以一次性提交很多文件，<code>-m</code>后输入的是本次提交的说明，可以输入任意内容</p>
 <h4 id="查看工作区状态"><a href="#查看工作区状态" class="headerlink" title="查看工作区状态"></a>查看工作区状态</h4><p><code>git status</code></p>
 <h4 id="查看修改的内容"><a href="#查看修改的内容" class="headerlink" title="查看修改的内容"></a>查看修改的内容</h4><p>总共有三个分别是：<br><code>git diff</code></p>
 <p><code>git diff --cached</code></p>
@@ -514,7 +514,7 @@
 <li>当你该乱了工作区某个文件的内容时，想直接丢弃工作区的修改时，用命令<code>git checkout -- &lt;file&gt;</code></li>
 <li>当你不但改乱了工作区的某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>,就回到了第一步，第二步按第一步操作</li>
 <li>当你不但把修改添加到了暂存区（<code>git add &lt;file&gt;</code>）还提交了不适合的修改到版本库时参照命令 <blockquote>
-<p>时光穿梭机-版本回退</p>
+<p><strong>时光穿梭机-版本回退</strong></p>
 </blockquote>
 <h3 id="时光穿梭机-删除文件"><a href="#时光穿梭机-删除文件" class="headerlink" title="时光穿梭机-删除文件"></a>时光穿梭机-删除文件</h3>一般情况下，你通常直接在文件管理器中把没用的文件删除了，或者用rm命令（linux专用命令）删了（前提是你把文件提交到版本库中去了）<br><code>git rm &lt;file&gt;</code><br><code>git rm &lt;file&gt;</code>相当于执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm &lt;file&gt;</span><br><span class="line">git add &lt;file&gt;</span><br></pre></td></tr></table></figure>
 </li>
