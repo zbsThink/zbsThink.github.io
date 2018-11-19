@@ -96,12 +96,12 @@
 <meta property="og:site_name" content="zbsThink&#39;blog">
 <meta property="og:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/11/11/deepLearnGit/01.jpg">
-<meta property="og:updated_time" content="2018-11-19T00:57:34.581Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/11/deepLearnGit/version.jpg">
+<meta property="og:updated_time" content="2018-11-19T01:10:14.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="deepLearnGit">
 <meta name="twitter:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/11/deepLearnGit/01.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/11/deepLearnGit/version.jpg">
 
 
 
@@ -479,8 +479,9 @@
 
       
         <p>这里是我做的关于git学习的笔记，记的也比较详细<br><a id="more"></a></p>
-<h2 id="Git介绍"><a href="#Git介绍" class="headerlink" title="Git介绍"></a>Git介绍</h2><p> Git是分布式版本控制系统<br> 集中式VS分布式，SVN VS Git</p>
-<ol>
+<h2 id="Git介绍"><a href="#Git介绍" class="headerlink" title="Git介绍"></a>Git介绍</h2><ul>
+<li>Git是分布式版本控制系统</li>
+<li>集中式VS分布式，SVN VS Git<ol>
 <li>SVN和Git的主要区别在于历史版本维护的位置</li>
 <li>Git本地仓库包含代码还有历史库，在本地环境开发就可以记录历史，而SVN的历史库存于中央仓库，每次对比于提交代码都必须连接到中央仓库才能进行</li>
 <li>这样的好处在于<ul>
@@ -490,6 +491,8 @@
 </ul>
 </li>
 </ol>
+</li>
+</ul>
 <p><code>git config</code>命令的<code>--global</code>参数，表明这台机器上的所有Git仓库都会使用这个配置，也可以对某个仓库指定不同的用户名和邮箱地址</p>
 <h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><h4 id="初始化一个Git仓库"><a href="#初始化一个Git仓库" class="headerlink" title="初始化一个Git仓库"></a>初始化一个Git仓库</h4><p><code>git init</code></p>
 <h4 id="添加文件到Git仓库"><a href="#添加文件到Git仓库" class="headerlink" title="添加文件到Git仓库"></a>添加文件到Git仓库</h4><p>包括两步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br><span class="line">git commit -m &quot;decription&quot;</span><br></pre></td></tr></table></figure></p>
@@ -501,7 +504,7 @@
 <ul>
 <li><code>git diff</code>可以查看工作区（work dict）和暂存区（stage）的区别</li>
 <li><code>git diff --cached</code> 可以查看暂存区（stage）和分支(master)的区别</li>
-<li><code>git diff HEAD -- &lt;file&gt;</code>可以查看工作区和版本库里面最新版本的区别<h2 id="工作区、暂存区和版本库"><a href="#工作区、暂存区和版本库" class="headerlink" title="工作区、暂存区和版本库"></a>工作区、暂存区和版本库</h2>工作区：在电脑里面能看到的目录<br>版本库：在工作区又一个隐藏目录<code>.git</code>，是Git的版本库。Git的版本库中存了很多东西，其中最重要的就是称为stage（或者称为index）的暂存区，还有Git自动创建的master，以及指向master的指针HEAD<br><img src="/2018/11/11/deepLearnGit/01.jpg" alt="工作区，暂存区和版本库"><br>进一步解释一些命令：<ul>
+<li><code>git diff HEAD -- &lt;file&gt;</code>可以查看工作区和版本库里面最新版本的区别<h2 id="工作区、暂存区和版本库"><a href="#工作区、暂存区和版本库" class="headerlink" title="工作区、暂存区和版本库"></a>工作区、暂存区和版本库</h2>工作区：在电脑里面能看到的目录<br>版本库：在工作区又一个隐藏目录<code>.git</code>，是Git的版本库。Git的版本库中存了很多东西，其中最重要的就是称为stage（或者称为index）的暂存区，还有Git自动创建的master，以及指向master的指针HEAD<br><img src="/2018/11/11/deepLearnGit/version.jpg" alt="工作区，暂存区和版本库"><br>进一步解释一些命令：<ul>
 <li><code>git add</code>实际上是把文件添加到暂存区</li>
 <li><code>git commit</code>实际上是把暂存区的所有内容提交到当前分支<h2 id="时光穿梭机"><a href="#时光穿梭机" class="headerlink" title="时光穿梭机"></a>时光穿梭机</h2><h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h3><h3 id="时光穿梭机-撤销修改"><a href="#时光穿梭机-撤销修改" class="headerlink" title="时光穿梭机-撤销修改"></a>时光穿梭机-撤销修改</h3>前提是你的文件以前使用过<code>git add &lt;file&gt;</code><h4 id="丢弃工作区的修改"><a href="#丢弃工作区的修改" class="headerlink" title="丢弃工作区的修改"></a>丢弃工作区的修改</h4><code>git checkout -- &lt;file&gt;</code><br>该命令是指文件在工作区的修改全部撤销，这里有两种情况:</li>
 </ul>
