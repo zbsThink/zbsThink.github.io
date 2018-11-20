@@ -97,7 +97,7 @@
 <meta property="og:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/11/11/deepLearnGit/version.jpg">
-<meta property="og:updated_time" content="2018-11-20T08:08:01.670Z">
+<meta property="og:updated_time" content="2018-11-20T08:11:19.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="deepLearnGit">
 <meta name="twitter:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
@@ -551,14 +551,13 @@
 <ol>
 <li>master分支是非常稳定的，也就是仅用来发布最新版本，平时不能在上面干活</li>
 <li>平时干活都应该在dev分支上，也就是说dev分支是不稳定的，在dev上干完活后确认dev分支无误后在把<br>dev分支合并到master上</li>
-<li>合并分支时加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能够看出来曾经做过合并而<code>fast forward</code>合并看不出合并历史<br>而fast forward合并就看不出来曾经做过合并<h3 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h3>当你在dev分支中开发自己的功能时你在提交前遇到了bug所以不能够提交如何做呢？<ul>
-<li>首先你应该把当前的工作现场储藏起来使用如下命令<br><code>git stash</code></li>
-<li>首先你要先确定要在哪个分支上修复bug，假定要在master分支上修复，就从master创建临时分支例如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master//切换到分支master</span><br><span class="line">git checkout -b issue-101//创建分支issue-101并且切换到分支issue-101</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
+<li>合并分支时加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能够看出来曾经做过合并而<code>fast forward</code>合并看不出合并历史<br>而fast forward合并就看不出来曾经做过合并<h3 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h3>当你在dev分支中开发自己的功能时你在提交前遇到了bug所以不能够提交如何做呢？</li>
 </ol>
 <ul>
+<li>首先你应该把当前的工作现场储藏起来使用如下命令<br><code>git stash</code></li>
+<li><p>首先你要先确定要在哪个分支上修复bug，假定要在master分支上修复，就从master创建临时分支例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master//切换到分支master</span><br><span class="line">git checkout -b issue-101//创建分支issue-101并且切换到分支issue-101</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>然后可以进文件中修复bug,并且执行以下操作</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br><span class="line">git commit -m &quot;fix bug lo1&quot;</span><br></pre></td></tr></table></figure>
 </li>
