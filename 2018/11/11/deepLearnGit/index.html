@@ -97,7 +97,7 @@
 <meta property="og:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/11/11/deepLearnGit/version.jpg">
-<meta property="og:updated_time" content="2018-11-19T14:09:42.444Z">
+<meta property="og:updated_time" content="2018-11-20T07:36:45.253Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="deepLearnGit">
 <meta name="twitter:description" content="这里是我做的关于git学习的笔记，记的也比较详细">
@@ -548,14 +548,17 @@
 </li>
 </ul>
 <p>第三步：<br>我们切回master<br><code>git checkout master</code><br>第四步：<br>准备合并分支，请注意<code>--no-ff</code>参数，表示禁用<code>fast forward</code>使用如下命令<br><code>git merge --no-ff -m &quot;merge with no-ff</code><br>因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去<br>第五步：<br>我们用<code>git log --graph --pretty=oneline --abbrev-commit</code>命令查看分支历史（比<code>git log</code>好就好在可以看到合并历史，当然是不适用<code>fast forward</code>模式的合并）<br><strong>小结</strong></p>
-<ul>
+<ol>
 <li>master分支是非常稳定的，也就是仅用来发布最新版本，平时不能在上面干活</li>
-<li>平时干活都应该在dev分支上，也就是说dev分支是不稳定的，在dev上干完活后确认dev分支无误后在把dev<br>分支合并到master上</li>
-<li>合并分支时加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能够看出来曾经做过合并<br>而fast forward合并就看不出来曾经做过合并<h3 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h3>当你在dev分支中开发自己的功能时你在提交前遇到了bug所以不能够提交如何做呢？</li>
+<li>平时干活都应该在dev分支上，也就是说dev分支是不稳定的，在dev上干完活后确认dev分支无误后在<br>dev分支合并到master上</li>
+<li>合并分支时加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能够看出来曾经做过合并<br>而fast forward合并就看不出来曾经做过合并<h3 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h3>当你在dev分支中开发自己的功能时你在提交前遇到了bug所以不能够提交如何做呢？<ul>
 <li>首先你应该把当前的工作现场储藏起来使用如下命令<br><code>git stash</code></li>
-<li><p>首先你要先确定要在哪个分支上修复bug，假定要在master分支上修复，就从master创建临时分支例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master//切换到分支master</span><br><span class="line">git checkout -b issue-101//创建分支issue-101并且切换到分支issue-101</span><br></pre></td></tr></table></figure>
+<li>首先你要先确定要在哪个分支上修复bug，假定要在master分支上修复，就从master创建临时分支例如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master//切换到分支master</span><br><span class="line">git checkout -b issue-101//创建分支issue-101并且切换到分支issue-101</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+</li>
+</ol>
+<ul>
 <li><p>然后可以进文件中修复bug,并且执行以下操作</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br><span class="line">git commit -m &quot;fix bug lo1&quot;</span><br></pre></td></tr></table></figure>
 </li>
@@ -602,7 +605,7 @@
 </ol>
 <ul>
 <li>推送某个标签到远程使用如下命令<br><code>git push origin &lt;tagname&gt;</code></li>
-<li>一次性推送所有标签到远程<br><code>git push origin --tags</code><h2 id="使用Github"><a href="#使用Github" class="headerlink" title="使用Github"></a>使用Github</h2><strong>如何参与一个开源项目？</strong><br>以人气极高的bootstrap项目为例<br><strong>第一步</strong>：<br>首先在github中搜索bootstrap或者访它的主页<a href="https://github.com/twbs/bootstrap" target="_blank" rel="noopener">bootstrap主</a>点击fork按钮就在自己的账号下克隆了一个bootstrap仓库<br><strong>第二步</strong>：<br>从自己的账号下克隆刚才fork的仓库（注意一定要在自己的账号下克隆自己的仓库，这样你才能推送，如果从bootstrap的作者的仓库地址克隆（<code>git clone http地址或ssl地址</code>），因为你没有读写权限，你将不能推送修改<br><strong>第三步</strong><br>你在自己克隆的本地仓库中新建一个功能分支，然后进行相关文件的修改和添加，干完后往自己的仓库进行推送<br><strong>第四步</strong><br>如果你想推送你的修改到官方仓库，你可以在你刚才fork到自己账号下的bootstrap仓库中<code>pull request</code><br>具体步骤为点击<code>New Pull Request</code>，用自己的Github账号创建一个<code>Pull Request</code>，你自己的仓库会被默认设置为源仓库（head fork），询问你指定源分支（compare）、目标仓库（base fork）和目标分支（base）<br><strong>第五步</strong><br>等待官方审查<code>pull request</code>看它是否接受<br><strong>小结</strong><ol>
+<li>一次性推送所有标签到远程<br><code>git push origin --tags</code><h2 id="使用Github"><a href="#使用Github" class="headerlink" title="使用Github"></a>使用Github</h2><strong>如何参与一个开源项目？</strong><br>以人气极高的bootstrap项目为例<br><strong>第一步</strong>：<br>首先在github中搜索bootstrap或者访它的主页<a href="https://github.com/twbs/bootstrap" target="_blank" rel="noopener">bootstrap主</a>点击fork按钮就在自己的账号下克隆了一个bootstrap仓库<br><strong>第二步</strong>：<br>从自己的账号下克隆刚才fork的仓库（注意一定要在自己的账号下克隆自己的仓库，这样你才能推送，如果从bootstrap的作者的仓库地址克隆（<code>git clone http地址或ssl地址</code>），因为你没有读写权限，你将不能推送修改<br><strong>第三步</strong><br>你在自己克隆的本地仓库中新建一个功能分支，然后进行相关文件的修改和添加，干完后往自己的仓库进行推送<br><strong>第四步</strong><br>如果你想推送你的修改到官方仓库，你可以在你刚才fork到自己账号下的bootstrap仓库中<code>pull request</code><br>具体步骤为点击<code>New Pull Request</code>，用自己的Github账号创建一个<code>Pull Request</code>，你自己的仓库会被默认设置为<strong>源仓库（head fork）</strong>，询问你指定<strong>源分支（compare）</strong>、<strong>目标仓库（base fork）和目标分支（base）</strong><br><strong>第五步</strong><br>等待官方审查<code>pull request</code>看它是否接受<br><strong>小结</strong><ol>
 <li>在Github上，可以任意Fork开源仓库</li>
 <li>自己拥有Fork后的仓库的读写权限</li>
 <li>可以推送pull request给官方来贡献代码</li>
